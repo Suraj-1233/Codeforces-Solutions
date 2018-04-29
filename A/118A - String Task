@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+#include <set>
+#include <queue>
+#include <cctype>
+using namespace std;
+
+int main(){
+	set<char> vowels = {'a','e','i','o','u','y','A','E','I','O','U','Y'};
+	string word;
+	while(cin >> word){
+		queue<char>new_word;
+		for(char c:word){
+			if(vowels.count(c)!=1){
+				putchar('.');
+				putchar(tolower(c));
+			}
+		}
+	}
+	return 0;
+}
