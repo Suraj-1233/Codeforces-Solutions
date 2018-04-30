@@ -1,0 +1,34 @@
+#include <iostream>
+#include <cstdio>
+#include <string>
+#include <cstring>
+#include <vector>
+#include <set>
+#include <queue>
+#include <utility>
+#include <cctype>
+#include <stack>
+#include <cmath>
+
+using namespace std;
+int main(){
+	ios_base::sync_with_stdio(false);
+	int n,s;
+	while(scanf("%d",&n)==1){
+		int groups[5] = {0}, taxi = 0;
+		while(n--){
+			scanf("%d",&s);
+			groups[s]++;
+		}
+		taxi += (groups[4]+groups[3]+ceil(double(groups[2])/2));
+		if(groups[1]>groups[3]){
+			groups[1] -= groups[3];
+			if(groups[2]%2)
+				if(groups[1]>=2)
+					groups[1]-=2;
+			taxi += ceil(double(groups[1])/4);
+		}
+		printf("%d\n",taxi);
+	}
+	return 0;
+}
