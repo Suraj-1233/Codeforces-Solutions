@@ -1,0 +1,21 @@
+#include <iostream>
+#include <cstdio>
+#include <string>
+#include <cctype>
+
+using namespace std;
+
+bool caps(string s);
+int main(){
+	ios_base::sync_with_stdio(false);
+	string s;
+	const string hello = "hello";
+	while(cin>>s){
+		int j=0;
+		for(int i=0;i<s.size();++i){
+			if(s[i]==hello[j]) j++;
+		}
+		cout<<((j==5)?"YES":"NO");
+	}
+	return 0;
+}
