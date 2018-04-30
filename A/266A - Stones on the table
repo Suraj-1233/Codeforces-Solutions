@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cstdio>
+#include <string>
+#include <stack>
+
+using namespace std;
+
+int main(){
+	ios_base::sync_with_stdio(false);
+	string stones;
+	int n;
+	while(cin >> n >> stones){
+		stack<char>final;
+		for(char c:stones)
+			if(final.empty()||final.top()!=c)
+				final.push(c);
+		cout<<n - final.size()<<'\n';
+	}
+	return 0;
+}
+
+Time Complexity: O(n)
