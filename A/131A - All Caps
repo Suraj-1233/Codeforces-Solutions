@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cstdio>
+#include <string>
+#include <cctype>
+
+using namespace std;
+
+bool caps(string s);
+int main(){
+	ios_base::sync_with_stdio(false);
+	string s;
+	while(cin>>s){
+		if(caps(s)){
+			for(char& c:s){
+				if(islower(c)) c = toupper(c);
+				else c = tolower(c);
+			}
+		}
+		cout<<s<<'\n';
+	}
+	return 0;
+}
+
+bool caps(string s){
+	for(int i = s.size()-1; i>=1; --i)
+		if(islower(s[i]))
+			return false;
+	return true;
+}
