@@ -1,0 +1,17 @@
+#include <iostream>
+#include <cstdio>
+
+using namespace std;
+int main(){
+	int n,a,b;
+	while(scanf("%d",&n)==1){
+		int curr = 0, max = 0;
+		while(n--){
+			scanf("%d%d",&a,&b);
+			curr += (b-a);
+			if(curr>max) max = curr;
+		}
+		printf("%n\n",max);
+	}
+	return 0;
+}
