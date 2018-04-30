@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cstdio>
+#include <string>
+#include <vector>
+#include <set>
+#include <queue>
+#include <utility>
+#include <cctype>
+
+using namespace std;
+
+int main(){
+	ios_base::sync_with_stdio(false);
+	string s;
+	while(cin>>s){
+		priority_queue<int, vector<int>, greater<int> >num;
+		for(char c:s)
+			if(c!='+')
+				num.push(c-'0'); 
+		printf("%d", num.top());
+		num.pop();
+		while(!num.empty()){
+			printf("+%d", num.top());
+			num.pop();
+		}
+		printf("\n");
+	}
+	return 0;
+}
