@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+#include <set>
+
+using namespace std;
+
+set<char> code = {'H','Q','9'};
+
+bool valid(string s){
+	for(char c:s)
+		if(code.count(c)==1)
+			return true;
+	return false;
+}
+int main() {
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	string s;
+	while(cin>>s)
+		cout<<(valid(s)?"YES":"NO")<<'\n';
+	return 0;
+}
+
