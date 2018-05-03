@@ -1,0 +1,28 @@
+#include <iostream>
+#include <queue>
+#include <vector>
+#include <algorithm>
+#include <utility>
+using namespace std;
+typedef long long ll;
+
+
+int main() {
+	int total = 0, mine = 0, n, val, ct = 0;
+	priority_queue<int, vector<int>, less<int> >coins;
+	scanf("%d",&n);
+	while(n--){
+		scanf("%d",&val);
+		total += val;
+		coins.push(val);
+	}
+
+	while(mine<floor(double(total)/2)+1){
+		mine += coins.top();
+		ct++;
+		coins.pop();
+	}
+	printf("%d",ct);
+	return 0;
+}
+
