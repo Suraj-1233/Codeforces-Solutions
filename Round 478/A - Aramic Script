@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+#include <set>
+
+using namespace std;
+
+int main() {
+	int n;
+	string s;
+	while(cin>>n){
+		set<set<char> >ct;
+		while(n--){
+			cin >> s;
+			ct.insert(set<char>(s.begin(),s.end()));
+		}
+		cout<<ct.size()<<'\n';
+	}
+	return 0;
+}
+
