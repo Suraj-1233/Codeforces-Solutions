@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+#include <set>
+#include <bitset>
+using namespace std;
+
+
+int main() {
+	int n, zero_ct = 0;
+	scanf("%d",&n);
+	char word[105];
+	scanf("%s",word);
+	for(int i=0;i<n;++i)
+		zero_ct+=(word[i]=='0');
+	if(n == zero_ct) printf("%d",0);
+	else{
+		printf("%d", 1);
+		while(zero_ct--)
+			printf("%d",0);
+	}
+	return 0;
+}
+
